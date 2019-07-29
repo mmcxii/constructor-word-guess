@@ -4,16 +4,18 @@ function Letter(char) {
     this.guessed = false;
 }
 
-Letter.prototype.guessCheck = function(guess) {
+Letter.prototype.letterCheck = function(guess) {
     if (guess === this.char) {
         this.guessed = true;
     }
 };
 
-Letter.prototype.display = function() {
+Letter.prototype.toString = function() {
     if (!this.guessed) {
         return this.placeholder;
     } else {
         return this.char;
     }
 };
+
+module.exports = Letter;
